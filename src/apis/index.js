@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const TOKEN = '93a89eb491ce25f7cd243bd51fd8c68b38ae77cd'
+// const TOKEN = '93a89eb491ce25f7cd243bd51fd8c68b38ae77cd'
 // const option = {
 //   headers: {
 //     'Authorization': `token ${TOKEN}`
@@ -12,8 +12,8 @@ import qs from 'qs'
 import * as Tool from 'UTIL/tool'
 // axios 配置
 axios.defaults.timeout = 5000
-axios.defaults.baseURL = 'https://api.github.com'
-axios.defaults.headers.common['Authorization'] = `token ${TOKEN}`
+// axios.defaults.baseURL = 'https://api.github.com'
+// axios.defaults.headers.common['Authorization'] = `token ${TOKEN}`
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
 // POST传参序列化
@@ -74,25 +74,25 @@ export const oPost = (url, params) => {
   })
 }
 
-// export default {
-//   List () {
-//     return oGet(`https://www.easy-mock.com/mock/5926ae2191470c0ac1fde242/api/frontendguide/list`)
-//   },
-//   Get (link) {
-//     return oGet(link)
-//   }
-// }
-
-import * as repos from '../../static/FontEnd.json'
-export const setpromise = data => {
-  return new Promise((resolve, reject) => {
-    resolve(data)
-  })
-}
-var List = (username) => setpromise(repos)
-var Notifications = (username) => setpromise(repos)
-
 export default {
-  List,
-  Notifications
+  List () {
+    return oGet(`https://www.easy-mock.com/mock/5926ae2191470c0ac1fde242/api/frontendguide/list`)
+  },
+  Get (link) {
+    return oGet(link)
+  }
 }
+
+// import * as repos from '../../static/FontEnd.json'
+// export const setpromise = data => {
+//   return new Promise((resolve, reject) => {
+//     resolve(data)
+//   })
+// }
+// var List = (username) => setpromise(repos)
+// var Notifications = (username) => setpromise(repos)
+
+// export default {
+//   List,
+//   Notifications
+// }
